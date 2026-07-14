@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: GameText_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 8f7401d6d75f94447a9597f0acf763a2, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1908776071168
+    m_Localized: DANKESSCHREIBEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2146014294016
+    m_Localized: "Vielen Dank, dass Sie unser Spiel gespielt haben!\r\nDieses Spiel
+      ist vielleicht noch nicht perfekt, aber wir arbeiten st\xE4ndig an Verbesserungen.\r\nSollten
+      Sie Fehler entdecken oder etwas nicht benutzerfreundlich finden, teilen Sie
+      uns dies bitte mit, damit wir es beheben k\xF6nnen.\r\nNochmals vielen Dank,
+      dass Sie sich f\xFCr uns entschieden haben."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3820997013504
+    m_Localized: BEWERTEN SIE UNSER SPIEL!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4130305961984
+    m_Localized: "Gef\xE4llt dir dieses Spiel? \nDann bewerte uns bitte!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6326376427520
+    m_Localized: EINSTELLUNG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6776853065728
+    m_Localized: Lies mich
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7005828509696
+    m_Localized: CREDITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7313593954304
+    m_Localized: PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7561196302336
+    m_Localized: WIEDER AUFNEHMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7699008548864
+    m_Localized: ZUR STARTSEITE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8347296952320
+    m_Localized: VERLIEREN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2538057583259648
+    m_Localized: Ein Produkt von
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2538615832539136
+    m_Localized: SIE HABEN KEIN GELD MEHR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2539394022731776
+    m_Localized: "GESCH\xC4FT"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2539686663516160
+    m_Localized: SPIELERINFORMATIONEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2539878183825408
+    m_Localized: DATENSCHUTZRICHTLINIE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2539998770065408
+    m_Localized: "T\xC4GLICHE BELOHNUNG"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2540182031790080
+    m_Localized: "\xDCBER UNS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2540930543087616
+    m_Localized: UNTERLAGEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2541119626506240
+    m_Localized: Nutzungsbedingungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2541268125839360
+    m_Localized: SPIELERINFORMATIONEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2541416998465536
+    m_Localized: RANGLISTE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2541690181873664
+    m_Localized: PROBIEREN SIE ANDERE SDCASUAL-SPIELE AUS!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2541903109910528
+    m_Localized: SOZIAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2542031002628096
+    m_Localized: ERFOLGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2542148392808448
+    m_Localized: NEHMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2542290529382400
+    m_Localized: WERBUNG KOSTENLOS ANSEHEN!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2542493764382720
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2542592208891904
+    m_Localized: "AUFH\xD6REN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2542693765574656
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2542935680446464
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2543002780921856
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2543102571802624
+    m_Localized: NEHMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2543550879985664
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2543481623638016
+    m_Localized: NEHMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2543806245990400
+    m_Localized: NEHMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2543973632274432
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2544111612293120
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2544220097966080
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2544355632705536
+    m_Localized: "TR\xC4GERREKORD"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2544565171744768
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2544682150883328
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2544777571299328
+    m_Localized: SCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2544972891648000
+    m_Localized: NEHMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2545103842013184
+    m_Localized: NEHMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2545196225753088
+    m_Localized: NEHMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2545341663244288
+    m_Localized: "BONUSEINKOMMEN WALD F\xDCR 15 MINUTEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2545567698481152
+    m_Localized: "BONUS-EINKOMMEN EISEN F\xDCR 15 MINUTEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2545760762294272
+    m_Localized: "BONUS-EINKOMMENSSTEIN F\xDCR 15 MINUTEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2545908401795072
+    m_Localized: "BONUS-EINKOMMEN F\xDCR 15 MINUTEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2546114224680960
+    m_Localized: "BONUS-EINKOMMEN: FR\xDCCHTE F\xDCR 15 MINUTEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2546260287123456
+    m_Localized: Bonus-Einkommen in nur 5 Minuten
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

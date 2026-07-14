@@ -1,0 +1,4 @@
+Unity/Mediation
+- Organization Core ID: 18967543080110
+- Android: 5919730
+- Monetization Stats API Key: 1fdaca146e6788ac3c5f0ca4ae6208107d61b5b6c06bf63b68fba4865b685f00
