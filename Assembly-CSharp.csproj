@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{27A687C6-117C-C845-79DD-456517ACCC67}</ProjectGuid>
+    <ProjectGuid>{85A0BAEE-93EC-89FA-1803-FD97C6C4D9E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Backend\SceneMN.cs" />
     <Compile Include="Assets\Scripts\StoneMineSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\CricketSC.cs" />
+    <Compile Include="Assets\Scripts\FoodSC.cs" />
     <Compile Include="Assets\Scripts\Interface\AchievementSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\CrocoSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\AnimalSC.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\IronSC.cs" />
     <Compile Include="Assets\Scripts\CentralPos.cs" />
     <Compile Include="Assets\Scripts\Ads\AdsMN.cs" />
+    <Compile Include="Assets\Scripts\CoinSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\BeeSC.cs" />
     <Compile Include="Assets\Scripts\Backend\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\PigSC.cs" />
@@ -104,12 +106,12 @@
     <Compile Include="Assets\Scripts\Interface\LeaderSC.cs" />
     <Compile Include="Assets\Scripts\Interface\LoadSC.cs" />
     <Compile Include="Assets\Scripts\Backend\Singleton.cs" />
+    <Compile Include="Assets\Scripts\LooseSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\PeacockSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\DragonSC.cs" />
     <Compile Include="Assets\Scripts\StoneSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\GeneralContrlSC.cs" />
     <Compile Include="Assets\Scripts\Interface\PlayerInforSC.cs" />
-    <Compile Include="Assets\FoodSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\SnakeSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\ZebraSC.cs" />
     <Compile Include="Assets\Scripts\Interface\HomeSC.cs" />
@@ -128,12 +130,12 @@
     <Compile Include="Assets\Scripts\Gameplay\NoahSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\CowSC.cs" />
     <Compile Include="Assets\Scripts\Backend\CameraFollowPlayerSC.cs" />
-    <Compile Include="Assets\CoinSC.cs" />
     <Compile Include="Assets\Scripts\Backend\InventoryData.cs" />
     <Compile Include="Assets\Scripts\Interface\ShopSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\GooseSC.cs" />
     <Compile Include="Assets\Scripts\Backend\SoundSC.cs" />
     <Compile Include="Assets\Scripts\Interface\PromotionSC.cs" />
+    <Compile Include="Assets\Scripts\PlayerAtkSC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1115,7 +1117,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{0313B86F-D9BE-5A65-1964-38F6B4A4A85B}</Project>
+      <Project>{3E190B74-CEC6-208C-2740-70C2EFB7B8DE}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>

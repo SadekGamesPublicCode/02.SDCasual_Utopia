@@ -11,6 +11,7 @@ public class AnimalSC : MonoBehaviour
     [HideInInspector] ArkMakingMNSC genCtr;
     [HideInInspector] GeneralContrlSC omniCtr;
     [SerializeField] GameObject dropItem, coin;
+    [HideInInspector] NoahSC player;
     internal bool isPredators;
     internal int nutritionAmount;
     internal int hitCount;
@@ -23,6 +24,7 @@ public class AnimalSC : MonoBehaviour
         InvokeRepeating(nameof(WanderAround), 0f, 2f);
         hitCount = 0;
         Invoke(nameof(CaculateChanceToDropCoin), 5f);
+        player = GameObject.Find("CAN_ArkMaking").GetComponent<NoahSC>();
     }
 
     void WanderAround()

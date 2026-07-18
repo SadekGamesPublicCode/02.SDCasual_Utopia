@@ -21,6 +21,7 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
     [HideInInspector] AchievementSC achievePnl;
     [HideInInspector] DataSC data;
     [HideInInspector] PromotionSC promoPNl;
+    [HideInInspector] LooseSC loosePnl;
     [HideInInspector] AdsMN adsMN;
     [SerializeField] HomeSC home;
 
@@ -45,6 +46,7 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
     void InitEnviroment()
     {
         pausPnl = GameObject.Find("PNL_PausePnl").GetComponent<PauseSC>();
+        loosePnl = GameObject.Find("PNL_Loose").GetComponent<LooseSC>();
         settingPnl = GameObject.Find("PNL_SettingPnl").GetComponent<SettingSC>();
         playerPnl = GameObject.Find("PNL_PlayerInfo").GetComponent<PlayerInforSC>();
         dailyrewardPnl = GameObject.Find("PNL_DailyReward").GetComponent<DailyRewardSC>();
@@ -81,8 +83,10 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
         ShowLeader(false);
         ShowSetting(false);
         ShowPromo(false);
+        ShowLoose(false);
     }
     public void ShowSetting(bool isShow) => settingPnl.gameObject.SetActive(isShow);
+    public void ShowLoose(bool isShow) => loosePnl.gameObject.SetActive(isShow);
     public void ShowPause(bool isShow) => pausPnl.gameObject.SetActive(isShow);
     public void ShowReward(bool isShow) => dailyrewardPnl.gameObject.SetActive(isShow);
     public void ShowShop(bool isShow) => shopCtr.gameObject.SetActive(isShow);

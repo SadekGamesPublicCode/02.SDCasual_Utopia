@@ -15,14 +15,15 @@ TagManager:
   - Iron
   - Stone
   - Animals
+  - Foods
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
+  - Tree
   - 
   - 
   - 

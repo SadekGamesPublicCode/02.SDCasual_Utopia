@@ -38,7 +38,7 @@ public class PromotionSC : MonoBehaviour
                 Application.OpenURL("https://play.google.com/store/apps/details?id=com.SDSoft.OrbitalFighter&pcampaignid=web_share");
                 break;
             case 7:
-                //Weapon Smith
+                //Tank Destroye
                 Application.OpenURL("https://play.google.com/store/apps/details?id=com.SDSoft.TerraInAction&pcampaignid=web_share");
                 break;
             case 8:

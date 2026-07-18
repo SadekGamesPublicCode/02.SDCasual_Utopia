@@ -16,7 +16,9 @@ public class NoahSC : MonoBehaviour
     //Player attribute
     private int noahDir;
     private float moveSpd;
+    private int playerHP;
     Vector3 curTargetPos, weapOriginPos;
+    Vector3 curPlayerPos;
     void Start()
     {
         moveSpd = 3f;
@@ -45,15 +47,16 @@ public class NoahSC : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Tree" || collision.gameObject.tag == "Animals")
-        {
-            curTarget = collision.gameObject;
-            curTargetPos = curTarget.transform.position;
-        }
-        else if (collision.gameObject.tag == "Logs") { cutwoodMn.OnIncreaseWoods(); }
+        //if (collision.gameObject.tag == "Tree" || collision.gameObject.tag == "Animals")
+        //{
+        //    curTarget = collision.gameObject;
+        //    curTargetPos = curTarget.transform.position;
+        //}
+        if (collision.gameObject.tag == "Logs") { cutwoodMn.OnIncreaseWoods(); }
         else if(collision.gameObject.tag == "Iron") { cutwoodMn.OnIncreaseIron(); }
         else if (collision.gameObject.tag == "Stone") { cutwoodMn.OnIncreaseStone(); }
         else if (collision.gameObject.tag == "Fruits") { cutwoodMn.OnInCreaseFruits(); }
+        else if(collision.gameObject.tag == "Foods") { cutwoodMn.OnIncreaseFood(); }
         else if (collision.gameObject.tag == "Wheat") { cutwoodMn.OnIncreaseCrop(); }
         else if (collision.gameObject.tag == "Coin") { cutwoodMn.OnInCreaseMoney(); }
         else if (collision.gameObject.tag == "Build_Pos") 
@@ -65,17 +68,40 @@ public class NoahSC : MonoBehaviour
 
     private void OnMoveActionKey()
     {
-        if(Input.GetKey(KeyCode.W) == true) { transform.position += Vector3.up * Time.deltaTime * moveSpd; }
-        else if(Input.GetKey(KeyCode.S) == true) {    transform.position += Vector3.down * Time.deltaTime * moveSpd; }
+        if(Input.GetKey(KeyCode.W) == true)
+        {
+            if (curPlayerPos.y <= 5f)
+            {
+                transform.position += Vector3.up * Time.deltaTime * moveSpd;
+                curPlayerPos = gameObject.transform.position;
+            }
+        }
+        else if(Input.GetKey(KeyCode.S) == true) 
+        {
+            if (curPlayerPos.y >= -5f)
+            {
+                transform.position += Vector3.down * Time.deltaTime * moveSpd;
+                curPlayerPos = gameObject.transform.position;
+            }
+        }
         else if(Input.GetKey(KeyCode.A) == true)
         {
             if(noahDir == 0) { ChangeDir(); }
-            transform.position += Vector3.left * Time.deltaTime * moveSpd;
+            if(curPlayerPos.x >= -5f)
+            {
+                transform.position += Vector3.left * Time.deltaTime * moveSpd;
+                curPlayerPos = gameObject.transform.position;
+            }
+
         }
         else if(Input.GetKey(KeyCode.D) == true)
         {
             if (noahDir == 1) { ChangeDir(); }
-            transform.position += Vector3.right * Time.deltaTime * moveSpd;
+            if(curPlayerPos.x <= 5f)
+            {
+                transform.position += Vector3.right * Time.deltaTime * moveSpd;
+                curPlayerPos = gameObject.transform.position;
+            }
         }
     }
     private void OnMoveByTouch()
@@ -85,6 +111,7 @@ public class NoahSC : MonoBehaviour
 
         Vector3 direction = new Vector3(horizontal, vertical,0).normalized;
         transform.Translate(direction * Time.deltaTime * moveSpd);
+        curPlayerPos = gameObject.transform.position;
     }
     public void ChangeDir()
     {

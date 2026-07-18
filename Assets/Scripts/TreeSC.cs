@@ -10,7 +10,7 @@ public class TreeSC : MonoBehaviour
     [SerializeField] GameObject wood, fruits;
     [HideInInspector] ArkMakingMNSC genCtr;
     [HideInInspector] GeneralContrlSC omniCtr;
-    int hitCount, randWoodDrop;
+    public int hitCount, randWoodDrop;
     int chanceDropFruits;
     void Start()
     {
@@ -20,13 +20,6 @@ public class TreeSC : MonoBehaviour
         randWoodDrop = Random.Range(1, 4);
         chanceDropFruits = Random.Range(1, 100);
         noah = GameObject.Find("OBJ_Noah(Clone)").GetComponent<NoahSC>();
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Axe")
-        {
-            OnHandleChoping();
-        }
     }
     private void OnSpawnWood()
     {
@@ -57,9 +50,10 @@ public class TreeSC : MonoBehaviour
             Instantiate(fruits, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
         }
     }
-    private void OnHandleChoping()
+    public void OnHandleChoping()
     {
         hitCount++;
+        print("takeDmh");
         if (hitCount >= 3)
         {
             OnSpawnWood();

@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.021814799, y: 0, z: 0, w: 0.999762}
   m_LocalPosition: {x: 0.7, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8112142082146240539}
@@ -117,18 +117,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.1422731}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.16, y: 5.12}
+    oldSize: {x: 0.54, y: 1.28}
     newSize: {x: 2.88, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.88, y: 2.8354537}
+  m_Size: {x: 0.54, y: 1.28}
   m_EdgeRadius: 0
 --- !u!1 &4160726250103910804
 GameObject:
@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: -2780849586608454546}
   - component: {fileID: -2772452736194059025}
   - component: {fileID: -5914129290074664398}
+  - component: {fileID: 3438393243581497606}
   m_Layer: 0
   m_Name: OBJ_Noah
   m_TagString: Noah
@@ -164,6 +165,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9094801079352782508}
+  - {fileID: 6369652474387231275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3623784535591770521
@@ -304,3 +306,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 3633554070941213627}
   curTarget: {fileID: 0}
+  isAllowoMove: 0
+--- !u!114 &3438393243581497606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160726250103910804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671ca17e4d8acea45bb1d46bb47344be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTimeBtwAtk: 1
+  atkPos: {fileID: 6369652474387231275}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 64
+  atkRange: 0.15
+  dmg: 1
+--- !u!1 &7119103288005696614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6369652474387231275}
+  m_Layer: 3
+  m_Name: AtkPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6369652474387231275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119103288005696614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8112142082146240539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

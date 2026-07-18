@@ -77,8 +77,8 @@ public class ArkMakingMNSC : MonoBehaviour
             int randAnimalToSpawn;
             randAnimalToSpawn = Random.Range(0, animalPreyToSpawn.Count);
             Vector3 randPos;
-            randPos.x = Random.Range(player.transform.position.x - 5, player.transform.position.x + 5);
-            randPos.y = Random.Range(player.transform.position.y - 5, player.transform.position.y + 5);
+            randPos.x = Random.Range(player.transform.position.x - 2, player.transform.position.x + 2);
+            randPos.y = Random.Range(player.transform.position.y - 2, player.transform.position.y + 2);
             if(curPreyOnScreen <= preyOnScreenCap)
             {
                 curPreyOnScreen++;
@@ -91,8 +91,8 @@ public class ArkMakingMNSC : MonoBehaviour
             int randAnimalToSpawn;
             randAnimalToSpawn = Random.Range(0, animalPredatorToSpawn.Count);
             Vector3 randPos;
-            randPos.x = Random.Range(player.transform.position.x - 5, player.transform.position.x + 5);
-            randPos.y = Random.Range(player.transform.position.y - 5, player.transform.position.y + 5);
+            randPos.x = Random.Range(player.transform.position.x - 2, player.transform.position.x + 2);
+            randPos.y = Random.Range(player.transform.position.y - 2, player.transform.position.y + 2);
             if (curPreyOnScreen <= preyOnScreenCap)
             {
                 curPreyOnScreen++;
@@ -110,12 +110,12 @@ public class ArkMakingMNSC : MonoBehaviour
                 Vector3 randPos;
                 do
                 {
-                    randPos.x = Random.Range(player.transform.position.x - 5, player.transform.position.x + 5);
-                }while(randPos.x > -5 && randPos.x < 5);
+                    randPos.x = Random.Range(player.transform.position.x - 1, player.transform.position.x + 1);
+                }while(randPos.x > -1 && randPos.x < 1);
                 do
                 {
-                    randPos.y = Random.Range(player.transform.position.y - 5, player.transform.position.y + 5);
-                } while (randPos.y > -5 && randPos.y < 5);
+                    randPos.y = Random.Range(player.transform.position.y - 1, player.transform.position.y + 1);
+                } while (randPos.y > -1 && randPos.y < 1);
                 curTreeOnScreen++;
                 if (randTreeToSpawn == 0) Instantiate(treeA, new Vector3(randPos.x , randPos.y, 0), Quaternion.identity);
                 else if (randTreeToSpawn != 0) Instantiate(treeB, new Vector3(randPos.x, randPos.y, 0), Quaternion.identity);
@@ -130,11 +130,11 @@ public class ArkMakingMNSC : MonoBehaviour
         {
             randPosX = Random.Range(-60, 60);
             
-        } while (randPosX > -10 && randPosX < 10);
+        } while (randPosX > -5 && randPosX < 5);
         do
         {
             randPosY = Random.Range(-60, 60);
-        }while(randPosY > -10 && randPosY < 10);
+        }while(randPosY > -5 && randPosY < 5);
 
         Instantiate(ironMine, new Vector3(randPosX, randPosY, 0), Quaternion.identity);
     }
@@ -144,11 +144,11 @@ public class ArkMakingMNSC : MonoBehaviour
         do
         {
             randPosX = Random.Range(-32, 32);
-        } while (randPosX > -10 && randPosX < 10);
+        } while (randPosX > -5 && randPosX < 5);
         do
         {
             randPosY = Random.Range(-32, 32);
-        } while (randPosY > -10 && randPosY < 10);
+        } while (randPosY > -5 && randPosY < 5);
 
         Instantiate(stoneMine, new Vector3(randPosX, randPosY, 0), Quaternion.identity);
     }
@@ -180,6 +180,13 @@ public class ArkMakingMNSC : MonoBehaviour
         woodAmount++;
         dataCtr.UpdateWoods(woodAmount);
         woodAmount = dataCtr.pWoods;
+        OnHandleUIs();
+    }
+    public void OnIncreaseFood()
+    {
+        fruistAmount++;
+        dataCtr.UpdateFruist(fruistAmount);
+        fruistAmount = dataCtr.pFruits;
         OnHandleUIs();
     }
     public void OnIncreaseIron()
