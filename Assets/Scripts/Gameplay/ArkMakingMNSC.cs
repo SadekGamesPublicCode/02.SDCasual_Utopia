@@ -11,22 +11,20 @@ public class ArkMakingMNSC : MonoBehaviour
 
     [SerializeField] Text woodsAmountTxt, ironAmountsTxt, stoneAmountsTxt, fruitAmountsTxt, cropAmountsTxt, moneyAmountsTxt;
     [SerializeField] Text insuffencingResourcetxt;
-    [SerializeField] List<GameObject> animalPreyToSpawn = new List<GameObject>();
-    [SerializeField] List<GameObject> animalPredatorToSpawn = new List<GameObject>();
     [SerializeField] NoahSC player;
     [SerializeField] GameObject treeA, treeB, ironMine, stoneMine;
-    [SerializeField] GameObject buildOptionPnl;
+    [SerializeField] GameObject actionPnl;
+    [SerializeField] Slider playerHPSlide, playerExpSlide;
     [HideInInspector] public int deviceType;
+    [HideInInspector] public int curTreeOnScreen;
 
     //Gameplay Control variables
     [HideInInspector]
     public bool isGameStart; //Use for detech game start and pauise even
     private int woodAmount, ironAmount, stoneAmount, fruistAmount, cropAmount, moneyAmount;
-    public int treeOnScreenCapacity, preyOnScreenCap, pretadorOnScreenCap;
-    [HideInInspector] public int curTreeOnScreen;
-    public int randTreeToSpawn, curPreyOnScreen, curPredatorOnScreen;
-
-    //Collect Item Mode
+    public int treeOnScreenCapacity, randTreeToSpawn;
+    [HideInInspector] public int playerHP, playerXp, playerTargetXP, playerHPFull, playerLevel;
+    private int playtimeCount;
     void Start()
     {
         genCtrl = GameObject.Find("CAN_GenControl").GetComponent<GeneralContrlSC>();
@@ -36,13 +34,13 @@ public class ArkMakingMNSC : MonoBehaviour
         deviceType = genCtrl.deviceType;
         curTreeOnScreen = 0;
         treeOnScreenCapacity = 100;
-        preyOnScreenCap = 30;
-        pretadorOnScreenCap = 10;
+        playtimeCount = 0;
         genCtrl.AssitsGamemode(1);
         GetPlayerDatas();
         OnInitMap();
         SpawnIronMine();
         SpawnStoneMine();
+        InvokeRepeating(nameof(CountToSpawnEnemy), 0f, 1f);
     }
 
     private void GetPlayerDatas()
@@ -54,51 +52,24 @@ public class ArkMakingMNSC : MonoBehaviour
         cropAmount = dataCtr.pCrop;
         moneyAmount = dataCtr.pCoin;
 
+        playerHP = dataCtr.pHP;
+        playerXp = dataCtr.pXP;
+        playerLevel = dataCtr.pLv;
+        playerHPFull = 100;
+        playerTargetXP = playerLevel * 100;
+
         OnHandleUIs();
     }
 
-    #region Handle Gameplay
+    #region Handle Controle Gameplay
     private void OnInitMap()
     {
-        player = Instantiate(player, Vector3.zero, Quaternion.identity);
+        player = Instantiate(player,new Vector3(1,1,0), Quaternion.identity);
         camFollow.AssistCamFollowCutWood(player);
         isGameStart = true;
         LoadTownOnPlay(); //Load town
         InvokeRepeating(nameof(SpawnTree), 0f, 4);
-        InvokeRepeating(nameof(OnHandleInitAnimal), 0f, 10f);
-    }
-    private void OnHandleInitAnimal()
-    {
-        int randAnimalInitChance;
-        randAnimalInitChance = Random.Range(1, 100);
-        if(randAnimalInitChance < 70)
-        {
-            //Spawn prey
-            int randAnimalToSpawn;
-            randAnimalToSpawn = Random.Range(0, animalPreyToSpawn.Count);
-            Vector3 randPos;
-            randPos.x = Random.Range(player.transform.position.x - 2, player.transform.position.x + 2);
-            randPos.y = Random.Range(player.transform.position.y - 2, player.transform.position.y + 2);
-            if(curPreyOnScreen <= preyOnScreenCap)
-            {
-                curPreyOnScreen++;
-                Instantiate(animalPreyToSpawn[randAnimalToSpawn], new Vector3(randPos.x, randPos.y, 0), Quaternion.identity);
-            }
-        }
-        else if(randAnimalInitChance >= 70)
-        {
-            //Spawn Predator
-            int randAnimalToSpawn;
-            randAnimalToSpawn = Random.Range(0, animalPredatorToSpawn.Count);
-            Vector3 randPos;
-            randPos.x = Random.Range(player.transform.position.x - 2, player.transform.position.x + 2);
-            randPos.y = Random.Range(player.transform.position.y - 2, player.transform.position.y + 2);
-            if (curPreyOnScreen <= preyOnScreenCap)
-            {
-                curPreyOnScreen++;
-                Instantiate(animalPredatorToSpawn[randAnimalToSpawn], new Vector3(randPos.x, randPos.y, 0), Quaternion.identity);
-            }
-        }
+        InvokeRepeating(nameof(SpawnEnemies), 0f, 20f);
     }
     private void SpawnTree()
     {
@@ -123,18 +94,25 @@ public class ArkMakingMNSC : MonoBehaviour
             }
         }
     }
+    private void SpawnEnemies()
+    {
+        if(playtimeCount >= 300)
+        {
+            //Spawn Enemies
+        }
+    }
     private void SpawnIronMine()
     {
         float randPosX, randPosY;
         do
         {
-            randPosX = Random.Range(-60, 60);
+            randPosX = Random.Range(-5, 5);
             
-        } while (randPosX > -5 && randPosX < 5);
+        } while (randPosX > -1 && randPosX < 1);
         do
         {
-            randPosY = Random.Range(-60, 60);
-        }while(randPosY > -5 && randPosY < 5);
+            randPosY = Random.Range(-5, 5);
+        }while(randPosY > -1 && randPosY < 1);
 
         Instantiate(ironMine, new Vector3(randPosX, randPosY, 0), Quaternion.identity);
     }
@@ -143,12 +121,12 @@ public class ArkMakingMNSC : MonoBehaviour
         float randPosX, randPosY;
         do
         {
-            randPosX = Random.Range(-32, 32);
-        } while (randPosX > -5 && randPosX < 5);
+            randPosX = Random.Range(-5, 5);
+        } while (randPosX > -1  && randPosX < 1);
         do
         {
-            randPosY = Random.Range(-32, 32);
-        } while (randPosY > -5 && randPosY < 5);
+            randPosY = Random.Range(-5, 5);
+        } while (randPosY > -1 && randPosY < 1);
 
         Instantiate(stoneMine, new Vector3(randPosX, randPosY, 0), Quaternion.identity);
     }
@@ -157,14 +135,28 @@ public class ArkMakingMNSC : MonoBehaviour
     #region Handle UI events
     private void OnHandleUIs()
     {
+        //Handle what UI show on screen
         woodsAmountTxt.text = woodAmount.ToString();
         ironAmountsTxt.text = ironAmount.ToString();
         stoneAmountsTxt.text = stoneAmount.ToString();
         cropAmountsTxt.text = cropAmount.ToString();
         fruitAmountsTxt.text = fruistAmount.ToString();
         moneyAmountsTxt.text = moneyAmount.ToString();
+
+        playerExpSlide.maxValue = playerTargetXP;
+        playerHPSlide.maxValue = playerHPFull;
+        playerHPSlide.value = playerHP;
+        playerExpSlide.value = playerXp;
     }
     public void OnShowBuildOption() { OnVisibleBuildOption(true); }
+    private void CountToSpawnEnemy()
+    {
+        playtimeCount++;
+        if(playtimeCount >= 300)
+        {
+            CancelInvoke();
+        }
+    }
     public void OnPause()
     {
         //Handle pause game
@@ -305,12 +297,8 @@ public class ArkMakingMNSC : MonoBehaviour
     }
     public void OnVisibleBuildOption(bool isShow)
     {
-        buildOptionPnl.gameObject.SetActive(isShow);
+        actionPnl.gameObject.SetActive(isShow);
         insuffencingResourcetxt.gameObject.SetActive(false);
-        if (isShow == false)
-        {
-            player.isAllowoMove = true;
-        }
     }
     private void OnDisableText()
     {
@@ -319,5 +307,35 @@ public class ArkMakingMNSC : MonoBehaviour
     private void LoadTownOnPlay()
     {
         //Load town from JSON
+    }
+    public void OnHandleXP(int value) 
+    {
+        dataCtr.UpdatePlayerStat(1, value);
+        //Handle Slider XP Bar
+        playerExpSlide.value = value;
+        if(value >= playerLevel * 100)
+        {
+            playerLevel++;
+            dataCtr.UpdatePlayerStat(2, playerLevel);
+        }
+    }
+    public void OnHandleHP(int value)
+    {
+        dataCtr.UpdatePlayerStat(0, value);
+        //Handle slider HP
+        playerHPSlide.value = value;
+    }
+    public void OnRunOutHP()
+    {
+        genCtrl.ShowLoose(true);
+    }
+    public void OnRefillHP()
+    {
+        playerHP = playerHPFull;
+        OnHandleHP(playerHP);
+    }
+    public void OnSwitchWeap()
+    {
+        player.SwitchWeapPlayer();
     }
 }

@@ -5,26 +5,30 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
 
-public class AnimalSC : MonoBehaviour
+public class AnimalSC : MonoBehaviour, IDamageableTarget
 {
     Vector3 previousPos, newPos;
     [HideInInspector] ArkMakingMNSC genCtr;
+    [HideInInspector]
+    AnimalSpawnerSC animalSpawnStr;
     [HideInInspector] GeneralContrlSC omniCtr;
-    [SerializeField] GameObject dropItem, coin;
+    [SerializeField] GameObject dropItem, coin, expDrop;
     [HideInInspector] NoahSC player;
-    internal bool isPredators;
+    [SerializeField] internal bool isPredators;
     internal int nutritionAmount;
     internal int hitCount;
     internal int chanceDropMoney;
+    internal int expToDrop = 3;
     protected virtual void Start()
     {
         previousPos = gameObject.transform.position;
-        genCtr = GameObject.Find("CAN_ArkMaking").GetComponent<ArkMakingMNSC>();
+        genCtr = GameObject.Find("GameplayMN").GetComponent<ArkMakingMNSC>();
+        animalSpawnStr = GameObject.Find("GameplayMN").GetComponent<AnimalSpawnerSC>();
         omniCtr = GameObject.Find("CAN_GenControl").GetComponent<GeneralContrlSC>();
         InvokeRepeating(nameof(WanderAround), 0f, 2f);
         hitCount = 0;
         Invoke(nameof(CaculateChanceToDropCoin), 5f);
-        player = GameObject.Find("CAN_ArkMaking").GetComponent<NoahSC>();
+        player = GameObject.Find("GameplayMN").GetComponent<NoahSC>();
     }
 
     void WanderAround()
@@ -38,24 +42,17 @@ public class AnimalSC : MonoBehaviour
     }
     internal void DoBehaviour()
     {
-        if (isPredators == true)
-        {
-            //Do something with player
-        }else
+        if (isPredators == false)
         {
             //Run away
-            transform.DOMove(new Vector3(transform.position.x - 0.5f, transform.position.y, 0), 0.5f);
+            transform.DOMove(new Vector3(transform.position.x - 1, transform.position.y, 0), 0.2f);
         }
     }
     internal void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             DoBehaviour();
-        }else if(collision.gameObject.tag == "Axe")
-        {
-            if(isPredators == true) { PredatorOnCollide();}
-            else if(isPredators == false) { PreyInCollide(); }
         }
     }
     internal void PredatorOnCollide()
@@ -64,6 +61,11 @@ public class AnimalSC : MonoBehaviour
         hitCount++;
         if (hitCount >= 3)
         {
+            for(int i = 0; i < expToDrop; i++)
+            {
+                Instantiate(expDrop, transform.position, Quaternion.identity);
+            }
+
             if(omniCtr.isBoostFruits == 1)
             {
                 Instantiate(dropItem, new Vector3(gameObject.transform.position.x - 0.25f, gameObject.transform.position.y, 0), Quaternion.identity);
@@ -78,7 +80,7 @@ public class AnimalSC : MonoBehaviour
             {
                 Instantiate(coin, new Vector3(gameObject.transform.position.x - 0.25f, gameObject.transform.position.y, 0), Quaternion.identity);
             }
-            genCtr.curPreyOnScreen--;
+            animalSpawnStr.curPreyOnScreen--;
             Destroy(gameObject);
         }else
         {
@@ -106,7 +108,7 @@ public class AnimalSC : MonoBehaviour
             {
                 Instantiate(coin, new Vector3(gameObject.transform.position.x - 0.25f, gameObject.transform.position.y, 0), Quaternion.identity);
             }
-            genCtr.curPredatorOnScreen--;
+            animalSpawnStr.curPredatorOnScreen--;
             Destroy(gameObject);
         }else
         {
@@ -121,6 +123,16 @@ public class AnimalSC : MonoBehaviour
         }else
         {
             chanceDropMoney = Random.Range(0, 100);
+        }
+    }
+    public virtual void OnTakeDamage() 
+    {
+        if(isPredators == true)
+        {
+            PredatorOnCollide();
+        }else if(isPredators == false)
+        {
+            PreyInCollide();
         }
     }
 }

@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 6438797515528549702}
   m_Layer: 0
   m_Name: OBJ_Ark_CenterHall
-  m_TagString: Untagged
+  m_TagString: Build_Pos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 88963618066650006}
   - component: {fileID: 401180747340107073}
   - component: {fileID: 2285543910751499526}
-  m_Layer: 0
+  - component: {fileID: 8564163969211046796}
+  m_Layer: 7
   m_Name: OBJ_Boar
   m_TagString: Animals
   m_Icon: {fileID: 0}
@@ -32,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3367295981105787297}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6297397862948636623
@@ -143,7 +145,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -157,7 +159,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.02}
+  m_Size: {x: 1.28, y: 1.01}
   m_EdgeRadius: 0
 --- !u!114 &2285543910751499526
 MonoBehaviour:
@@ -173,3 +175,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItem: {fileID: 3458337980191087320, guid: 4eb1899fd6bae47428d4c33bc76d3dda, type: 3}
   coin: {fileID: 3458337980191087320, guid: aafd672d8b8e36846993829e5ca2da73, type: 3}
+  expDrop: {fileID: 3458337980191087320, guid: a97094be951dffa4fa0be5df400a589a, type: 3}
+  isPredators: 0
+--- !u!114 &8564163969211046796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447244135113411252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3b5d8c250d12c47bc2f873b00a9074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkPos: {fileID: 3367295981105787297}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
+  atkRange: 0.5
+  dmg: 1
+--- !u!1 &7004387662740041571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3367295981105787297}
+  m_Layer: 7
+  m_Name: AtkPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3367295981105787297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004387662740041571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6026537874193036943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

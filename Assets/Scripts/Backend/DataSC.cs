@@ -22,6 +22,7 @@ public class DataSC : MonoBehaviour
 
     //In-game boosting
     [HideInInspector] public int pBoostWood, pBoostIron, pBoostStone, pBoostFruits, pBoostCrop, pBoostCoin;
+    [HideInInspector] public int pHP, pXP, pLv;
 
     [SerializeField] SaveSystem saveSys;
     private void Awake()
@@ -77,6 +78,9 @@ public class DataSC : MonoBehaviour
         PlayerPrefs.SetInt("BoostFruits", 0);
         PlayerPrefs.SetInt("BoostCrop", 0);
         PlayerPrefs.SetInt("BoostCoin", 0);
+        PlayerPrefs.SetInt("PlayerHP", 100); //level 1
+        PlayerPrefs.SetInt("PlayerXP", 1); //level 1
+        PlayerPrefs.SetInt("PlayerLv", 1);
 
         Invoke("LoadOldPlayer", 3f); //De tam thoi
     }
@@ -100,6 +104,10 @@ public class DataSC : MonoBehaviour
         pBoostFruits = PlayerPrefs.GetInt("BoostFruits");
         pBoostCrop = PlayerPrefs.GetInt("BoostCrop");
         pBoostCoin = PlayerPrefs.GetInt("BoostCoin");
+
+        pHP = PlayerPrefs.GetInt("PlayerHP");
+        pXP = PlayerPrefs.GetInt("PlayerXP");
+        pLv = PlayerPrefs.GetInt("PlayerLv");
     }
     public void DataDelete()
     {
@@ -110,11 +118,11 @@ public class DataSC : MonoBehaviour
     }
     public void UploadPlayerData()
     {
-
+        //Upload to Server
     }
     #endregion
 
-    #region Data Update
+    #region Data Update PlayerPrefs
     public void UpdatePName(string name)
     {
         PlayerPrefs.SetString("PlayerName", name);
@@ -157,9 +165,30 @@ public class DataSC : MonoBehaviour
         PlayerPrefs.SetInt("PatrolDailyStreak", value);
         pDailyStreak = PlayerPrefs.GetInt("PatrolDailyStreak");
     }
+    public void UpdatePlayerStat(int type, int value)
+    {
+        switch (type)
+        {
+            case 0:
+                //HP
+                PlayerPrefs.SetInt("PlayerHP", value);
+                pHP = PlayerPrefs.GetInt("PlayerHP");
+                break;
+            case 1:
+                //XP
+                PlayerPrefs.SetInt("PlayerXP", value);
+                pXP = PlayerPrefs.GetInt("PlayerXP");
+                break;
+            case 2:
+                //Level
+                PlayerPrefs.SetInt("PlayerLv", value);
+                pXP = PlayerPrefs.GetInt("PlayerLv");
+                break;
+        }
+    }
     #endregion
 
-    #region Update Ingame Stats
+    #region Update Ingame Stats JSON
     public void UpdateWoods(int value)
     {
         pWoods = value;
@@ -190,7 +219,6 @@ public class DataSC : MonoBehaviour
         int[] a = { pWoods, pIron, pStone, pFruits, pCrop, pCoin};
         saveSys.OnSaveResourceData(a);
     }
-
     #endregion
     public void UpdatePlayerBoost(int indexs, int value)
     {

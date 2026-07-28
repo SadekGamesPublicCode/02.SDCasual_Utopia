@@ -38,9 +38,8 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
         CheckDeviceType();
         InitEnviroment();
         OnLoadBoosting();
+        Invoke(nameof(AssistAdsMn), 10f);
         Invoke(nameof(ShowRatePnl), 600f);
-
-
         countdonwBoostWood = countdownBoostIron = countdownBoostStone = countdownBoostCrop = countdownBoostCrop = 0;
     } 
     void InitEnviroment()
@@ -65,6 +64,12 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
         
         toDay = DateTime.Today.Day.ToString();
         CheckSoundOnStart();
+    }
+    private void AssistAdsMn()
+    {
+        print("|in assit adsmn");
+        adsMN = GameObject.Find("AdsMN").GetComponent<AdsMN>();
+        if (adsMN == null) { print("adsMN null"); }
     }
 
     #region Handle Panels Visibles
@@ -154,7 +159,7 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
                 break;
                 case 1:
                 //Main game Cutwood
-                cutwoodCtr = GameObject.Find("CAN_ArkMaking").GetComponent<ArkMakingMNSC>();
+                cutwoodCtr = GameObject.Find("GameplayMN").GetComponent<ArkMakingMNSC>();
                 break;
         }
     }

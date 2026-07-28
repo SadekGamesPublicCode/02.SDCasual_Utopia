@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
 
-public class TreeSC : MonoBehaviour
+public class TreeSC : MonoBehaviour, IDamageableTarget
 {
     //Do check bonus
     [SerializeField] NoahSC noah;
@@ -14,7 +14,7 @@ public class TreeSC : MonoBehaviour
     int chanceDropFruits;
     void Start()
     {
-        genCtr = GameObject.Find("CAN_ArkMaking").GetComponent<ArkMakingMNSC>();
+        genCtr = GameObject.Find("GameplayMN").GetComponent<ArkMakingMNSC>();
         omniCtr = GameObject.Find("CAN_GenControl").GetComponent<GeneralContrlSC>();
         hitCount = 0;
         randWoodDrop = Random.Range(1, 4);
@@ -49,6 +49,10 @@ public class TreeSC : MonoBehaviour
         {
             Instantiate(fruits, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
         }
+    }
+    public void OnTakeDamage()
+    {
+        OnHandleChoping();
     }
     public void OnHandleChoping()
     {

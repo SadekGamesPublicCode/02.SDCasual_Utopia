@@ -12,7 +12,7 @@ public class CameraFollowPlayerSC : MonoBehaviour
 
     public void AssistCamFollowCutWood(NoahSC a)
     {
-        gameCtrCutWood = GameObject.Find("CAN_ArkMaking").GetComponent<ArkMakingMNSC>();
+        gameCtrCutWood = GameObject.Find("GameplayMN").GetComponent<ArkMakingMNSC>();
         vcam.Follow = a.GetComponent<Transform>();
     }
 }

@@ -16,6 +16,8 @@ TagManager:
   - Stone
   - Animals
   - Foods
+  - XP
+  - DefTower
   layers:
   - Default
   - TransparentFX
@@ -24,9 +26,9 @@ TagManager:
   - Water
   - UI
   - Tree
-  - 
-  - 
-  - 
+  - Animal
+  - Player
+  - Mine
   - 
   - 
   - 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 88963618066650006}
   - component: {fileID: 401180747340107073}
   - component: {fileID: 4887749639446427824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OBJ_Agora
   m_TagString: Animals
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -157,7 +157,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 1.92}
+  m_Size: {x: 1.28, y: 0.96}
   m_EdgeRadius: 0
 --- !u!114 &4887749639446427824
 MonoBehaviour:
@@ -173,3 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItem: {fileID: 3458337980191087320, guid: 4eb1899fd6bae47428d4c33bc76d3dda, type: 3}
   coin: {fileID: 3458337980191087320, guid: aafd672d8b8e36846993829e5ca2da73, type: 3}
+  expDrop: {fileID: 3458337980191087320, guid: a97094be951dffa4fa0be5df400a589a, type: 3}
+  isPredators: 0

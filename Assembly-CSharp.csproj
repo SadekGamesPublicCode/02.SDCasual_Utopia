@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\HenSC.cs" />
     <Compile Include="Assets\Scripts\OxSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\RabbitSC.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\IDamageableTarget.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\TurkeySC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\CrabSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\DogSC.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\AnimalSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\HorseSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\ElephantSC.cs" />
+    <Compile Include="Assets\WeapSysSC.cs" />
     <Compile Include="Assets\Scripts\ResourceItemSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\KoalaSC.cs" />
     <Compile Include="Assets\Scripts\Ads\AdConfig.cs" />
@@ -99,12 +101,16 @@
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\BoarSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\ArkMakingMNSC.cs" />
     <Compile Include="Assets\Scripts\Backend\DataSC.cs" />
+    <Compile Include="Assets\Scripts\PredatorAtkSC.cs" />
     <Compile Include="Assets\Scripts\Backend\MainThemeSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\GiraffSC.cs" />
     <Compile Include="Assets\Scripts\Interface\RatingSC.cs" />
     <Compile Include="Assets\Scripts\TreeSC.cs" />
     <Compile Include="Assets\Scripts\Interface\LeaderSC.cs" />
     <Compile Include="Assets\Scripts\Interface\LoadSC.cs" />
+    <Compile Include="Assets\Scripts\CraftingMN.cs" />
+    <Compile Include="Assets\Scripts\BuildingData.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\IDamageablePlayer.cs" />
     <Compile Include="Assets\Scripts\Backend\Singleton.cs" />
     <Compile Include="Assets\Scripts\LooseSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\PeacockSC.cs" />
@@ -119,23 +125,29 @@
     <Compile Include="Assets\Scripts\Backend\CloudSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\FoxSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\LionSC.cs" />
+    <Compile Include="Assets\Scripts\BuildMN.cs" />
     <Compile Include="Assets\Scripts\Interface\Joystick.cs" />
     <Compile Include="Assets\Scripts\CropSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\ChickenSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\ChickSC.cs" />
     <Compile Include="Assets\Scripts\Backend\PauseSC.cs" />
+    <Compile Include="Assets\Scripts\ExpItemSC.cs" />
     <Compile Include="Assets\Scripts\Backend\SettingSC.cs" />
     <Compile Include="Assets\Scripts\Backend\TipsList.cs" />
     <Compile Include="Assets\Scripts\Interface\DailyRewardSC.cs" />
+    <Compile Include="Assets\Scripts\BuildSysSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\NoahSC.cs" />
+    <Compile Include="Assets\Scripts\AnimalSpawnerSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\CowSC.cs" />
     <Compile Include="Assets\Scripts\Backend\CameraFollowPlayerSC.cs" />
+    <Compile Include="Assets\Scripts\CraftingSysSC.cs" />
     <Compile Include="Assets\Scripts\Backend\InventoryData.cs" />
     <Compile Include="Assets\Scripts\Interface\ShopSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\GooseSC.cs" />
     <Compile Include="Assets\Scripts\Backend\SoundSC.cs" />
     <Compile Include="Assets\Scripts\Interface\PromotionSC.cs" />
     <Compile Include="Assets\Scripts\PlayerAtkSC.cs" />
+    <Compile Include="Assets\Scripts\SleepMN.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
