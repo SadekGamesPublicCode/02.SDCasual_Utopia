@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 48
+  controlID: 106
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 49
+  controlID: 39
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -443,9 +443,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 72550000
       m_LastClickedID: 0
-      m_ExpandedIDs: 04fbffff
+      m_ExpandedIDs: bcfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 235.93263, y: 417.13727, z: -0.63089836}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 235.93263, y: 417.13727, z: -0.63089836}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -879,7 +879,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 271.81595
     speed: 2
-    m_Value: 0.4553021
+    m_Value: 271.81595
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -939,7 +939,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: build
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -949,24 +949,24 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/GameObjects/Animal_Prefabs
+    - Assets
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: build
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Prefabs/GameObjects/Animal_Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Projects\2D Project - SDCasual\02.SDCasual_Utopia
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 62760000
-    m_LastClickedID: 30306
-    m_ExpandedIDs: 00000000d6730000de750000e4750000e87500005c76000000ca9a3b
+    m_SelectedIDs: f8730000
+    m_LastClickedID: 29688
+    m_ExpandedIDs: 00000000f8730000e8750000ee750000f075000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -994,7 +994,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d6730000
+    m_ExpandedIDs: 00000000f8730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1046,7 +1046,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 30}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
