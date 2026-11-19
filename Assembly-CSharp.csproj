@@ -64,8 +64,8 @@
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\RamSC.cs" />
     <Compile Include="Assets\Scripts\Interface\WoodSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\OstrictSC.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\AnimalS\HenSC.cs" />
     <Compile Include="Assets\Scripts\WeapSysSC.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\AnimalS\HenSC.cs" />
     <Compile Include="Assets\Scripts\OxSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\RabbitSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\IDamageableTarget.cs" />
@@ -148,9 +148,6 @@
     <Compile Include="Assets\Scripts\Interface\PromotionSC.cs" />
     <Compile Include="Assets\Scripts\PlayerAtkSC.cs" />
     <Compile Include="Assets\Scripts\SleepMN.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\AddressableAssetsData\link.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
