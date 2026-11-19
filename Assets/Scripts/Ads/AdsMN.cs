@@ -87,6 +87,7 @@ public class AdsMN : MonoBehaviour
                 bannerAds.LoadAd();
                 rewardAds.LoadAd();
                 interstitalAds.LoadAd();
+                ShowBannerAds();
                 break;
             case 2:
                 //Load Only Interstial
@@ -99,9 +100,9 @@ public class AdsMN : MonoBehaviour
             case 4:
                 //Load Only Banner
                 bannerAds.LoadAd();
+                ShowBannerAds();
                 break;
         }
-        Invoke(nameof(ShowBannerAds), 10f);
     }
 
     public void ShowBannerAds() => StartCoroutine(WaitToShowBanner());

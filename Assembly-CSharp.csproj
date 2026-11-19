@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Interface\WoodSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\OstrictSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\HenSC.cs" />
+    <Compile Include="Assets\Scripts\WeapSysSC.cs" />
     <Compile Include="Assets\Scripts\OxSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\RabbitSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\IDamageableTarget.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\AnimalSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\HorseSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\ElephantSC.cs" />
-    <Compile Include="Assets\WeapSysSC.cs" />
     <Compile Include="Assets\Scripts\ResourceItemSC.cs" />
     <Compile Include="Assets\Scripts\Gameplay\AnimalS\KoalaSC.cs" />
     <Compile Include="Assets\Scripts\Ads\AdConfig.cs" />
@@ -148,6 +148,9 @@
     <Compile Include="Assets\Scripts\Interface\PromotionSC.cs" />
     <Compile Include="Assets\Scripts\PlayerAtkSC.cs" />
     <Compile Include="Assets\Scripts\SleepMN.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AddressableAssetsData\link.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

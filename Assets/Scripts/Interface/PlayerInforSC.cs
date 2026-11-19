@@ -7,37 +7,27 @@ using UnityEngine.UI;
 public class PlayerInforSC : MonoBehaviour
 {
     [SerializeField] InputField usernameField;
+    [SerializeField] DataSC dataCtr;
+
+    [SerializeField] Text nameTxt, coinTxt, gemTxt, curLvTxt, dailyStreakTxt; 
 
     [HideInInspector] string playerName;
     private void Start() { }
     public void OnSubmitLocal()
     {
         playerName = usernameField.text;
-        PlayerPrefs.SetString("PName", playerName);
-        SettingNewPlayer();
+        dataCtr.UpdatePName(playerName);
     }
-    public void OnLogByGG() 
+    public void OnEnable()
     {
-        //Get player name from GG
-        PlayerPrefs.SetString("PName", playerName);
-        SettingNewPlayer();
+        OnLoadPlayerInfors();
     }
-    public void OnLogByFB() 
+    public void OnLoadPlayerInfors()
     {
-        //Get player name from Facebook
-        PlayerPrefs.SetString("PName", playerName);
-        SettingNewPlayer();
-    }
-    private void SettingNewPlayer()
-    {
-        PlayerPrefs.SetInt("HasPlayed", 1);
-        PlayerPrefs.SetInt("PTotalScore", 0);
-        PlayerPrefs.SetInt("PHighestScore", 0);
-        PlayerPrefs.SetInt("PHighestLevel", 0);
-        PlayerPrefs.SetInt("soundState", 1); //maintheme
-        PlayerPrefs.SetInt("sfxState", 1);
-        //mn.LoadUser();
-        gameObject.SetActive(false);
-        
+        nameTxt.text = dataCtr.pName.ToUpper();
+        coinTxt.text = dataCtr.pCoin.ToString();
+        gemTxt.text = dataCtr.pGems.ToString();
+        curLvTxt.text = dataCtr.pLv.ToString();
+        dailyStreakTxt.text = dataCtr.pDailyStreak.ToString();
     }
 }

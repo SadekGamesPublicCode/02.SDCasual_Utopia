@@ -46,16 +46,16 @@ public class PromotionSC : MonoBehaviour
                 Application.OpenURL("https://play.google.com/store/apps/details?id=com.SDSoft.MorpinosEvolution&pcampaignid=web_share");
                 break;
             case 9:
-                //Animal Merge
+                //Bartending
                 Application.OpenURL("https://play.google.com/store/apps/developer?id=Sadek+Games+Studio");
                 break;
             case 10:
-                //Gravity Tower
-                Application.OpenURL("https://play.google.com/store/apps/developer?id=Sadek+Games+Studio");
+                //Feeding Fishy
+                Application.OpenURL("https://play.google.com/store/apps/details?id=com.SDSoft.FeedingFishy&pcampaignid=web_share");
                 break;
             case 11:
-                //Fish Tank
-                Application.OpenURL("https://play.google.com/store/apps/developer?id=Sadek+Games+Studio");
+                //Animal Sort
+                Application.OpenURL("https://play.google.com/store/apps/details?id=com.SDSoft.AnimalSort&pcampaignid=web_share");
                 break;
             case 12:
                 //Topdown Fishshooter

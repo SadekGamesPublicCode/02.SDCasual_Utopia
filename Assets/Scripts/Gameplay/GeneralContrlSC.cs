@@ -22,7 +22,7 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
     [HideInInspector] DataSC data;
     [HideInInspector] PromotionSC promoPNl;
     [HideInInspector] LooseSC loosePnl;
-    [HideInInspector] AdsMN adsMN;
+    [SerializeField] AdsMN adsMN;
     [SerializeField] HomeSC home;
 
     public string toDay;
@@ -38,9 +38,10 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
         CheckDeviceType();
         InitEnviroment();
         OnLoadBoosting();
-        Invoke(nameof(AssistAdsMn), 10f);
         Invoke(nameof(ShowRatePnl), 600f);
         countdonwBoostWood = countdownBoostIron = countdownBoostStone = countdownBoostCrop = countdownBoostCrop = 0;
+
+        InvokeRepeating(nameof(OnCallLoadBannerAds), 0f, 10f);
     } 
     void InitEnviroment()
     {
@@ -321,5 +322,9 @@ public class GeneralContrlSC : Singleton<GeneralContrlSC>
             OnLoadBoosting();
             countdonwBoostWood = countdownBoostIron = countdownBoostStone = countdownBoostCrop = countdownBoostCrop = 0;
         }
+    }
+    private void OnCallLoadBannerAds()
+    {
+        adsMN.LoadAds(4);
     }
 }
